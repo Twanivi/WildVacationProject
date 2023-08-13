@@ -7,13 +7,6 @@ $color-primary: #ffb800;
   line-height: $lhight;
 }
 
-@mixin flex-position($display, $justify-content, $align-items, $flex-wrap: auto){
-  display: $display;
-  justify-content: $justify-content;
-  align-items: $align-items;
-  flex-wrap: $flex-wrap;
-}
-
 body {
   background: #1b1e22;
   font-family: "Montserrat", sans-serif;
@@ -40,20 +33,19 @@ header {
 
   .container {
     padding-top: 28px;
-
-    @include font-style(flex, space-between, baseline);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 
     @media (max-width: 1160px) {
       display: block;
     }
-    
   }
-    
+
   nav ul {
     @media (max-width: 710px) {
       display: none;
     }
-
   }
 
   nav,
@@ -63,7 +55,9 @@ header {
   }
 
   .logo-lang {
-    @include font-style(flex, center, baseline);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
   }
 
   .logo-lang img {
@@ -81,8 +75,10 @@ header {
   }
 
   .nav-help {
-    @include font-style(flex, center, baseline);
-    
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
     @media (max-width: 1060px) {
       padding-top: 20px;
     }
@@ -147,13 +143,11 @@ main {
     }
 
     &__hero {
-      display: flex;
       flex-wrap: wrap;
+      padding-bottom: 205px;
+      display: flex;
       justify-content: space-around;
       align-items: center;
-      padding-bottom: 205px;
-
-      @include font-style(flex, space-around, center, wrap);
 
       @media (max-width: 1138px) {
         padding-bottom: 100px;
@@ -326,8 +320,10 @@ main {
 
   .greting__why-us-cards-wrapper {
     padding-top: 44px;
-
-    @include font-style(flex, space-between, center, wrap);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 
     @media (max-width: 1100px) {
       max-width: 700px;
@@ -361,7 +357,7 @@ main {
 
     @include font-style(#fff, 34px, 500);
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       font-size: 26px;
     }
   }
@@ -411,7 +407,7 @@ main {
     margin-bottom: 49px;
     gap: 24px;
 
-    @media (max-width: 1200px){
+    @media (max-width: 1200px) {
       justify-content: center;
     }
   }
@@ -421,8 +417,9 @@ main {
     left: 0;
     bottom: 25px;
     transition: 0.7s;
-
-    @include font-style(flex, center, center);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .actual__price {
@@ -487,7 +484,7 @@ main {
 
     @include font-style(#fff, 20px, 500);
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       margin-bottom: 52px;
     }
   }
@@ -516,16 +513,19 @@ main {
     padding-top: 59px;
     padding-bottom: 68px;
 
-    @media (max-width: 1200px){
+    @media (max-width: 1200px) {
       padding-top: 30px;
       padding-bottom: 38px;
     }
-   }
+  }
 
   .number-result__cards-wrapper {
-    @include font-style(flex, space-between, center, wrap);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 
-    @media (max-width: 1200px){
+    @media (max-width: 1200px) {
       justify-content: center;
       row-gap: 20px;
     }
@@ -534,12 +534,12 @@ main {
   .number-result__card {
     width: 23%;
     text-align: center;
-    
-    @media (max-width: 1200px){
+
+    @media (max-width: 1200px) {
       width: 45%;
     }
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       width: 100%;
     }
   }
@@ -547,7 +547,7 @@ main {
   .number-result__number {
     @include font-style($color-primary, 78px, 500);
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       font-size: 60px;
     }
   }
@@ -559,19 +559,21 @@ main {
   .blog .container {
     padding: 62px 0;
 
-    @media (max-width: 1200px){
+    @media (max-width: 1200px) {
       max-width: 600px;
     }
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       max-width: 360px;
     }
 
-  .blog__info {
-    @include font-style(flex, space-between, center, wrap);
+    .blog__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   }
-  
-}
 
   .blog__places {
     width: 49%;
@@ -587,7 +589,7 @@ main {
     background-position: 50%;
     background-repeat: no-repeat;
     text-align: center;
-    @media (max-width: 1200px){
+    @media (max-width: 1200px) {
       width: 100%;
       margin-bottom: 25px;
     }
@@ -599,7 +601,7 @@ main {
 
     @include font-style(#fff, 34px, 500);
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       font-size: 25px;
     }
   }
@@ -614,7 +616,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
 
-    @media (max-width: 1200px){
+    @media (max-width: 1200px) {
       width: 100%;
     }
   }
@@ -626,7 +628,7 @@ main {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
     position: relative;
 
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       width: 100%;
       margin-bottom: 25px;
     }
@@ -700,8 +702,7 @@ main {
     display: flex;
     justify-content: center;
 
-    
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       margin-top: 450px;
     }
   }
@@ -715,11 +716,11 @@ main {
       padding: 0 104px 58px;
       text-align: center;
 
-      @media (max-width: 1200px){
+      @media (max-width: 1200px) {
         max-width: 600px;
       }
-  
-      @media (max-width: 700px){
+
+      @media (max-width: 700px) {
         max-width: 350px;
         padding-left: 0;
         padding-right: 0;
@@ -731,7 +732,7 @@ main {
 
       @include font-style(#fff, 34px, 500);
 
-      @media (max-width: 700px){
+      @media (max-width: 700px) {
         font-size: 28px;
       }
     }
@@ -742,7 +743,7 @@ main {
 
       @include font-style(#fff, 24px, 400);
 
-      @media (max-width: 700px){
+      @media (max-width: 700px) {
         font-size: 18px;
       }
     }
@@ -772,19 +773,20 @@ footer {
   .container {
     padding-bottom: 16px;
     display: flex;
-    flex-wrap: wrap;
+
     justify-content: space-between;
 
-    @media (max-width: 1050px){
+    @media (max-width: 1050px) {
+      flex-wrap: wrap;
       justify-content: center;
     }
-    
-    @media (max-width: 820px){
+
+    @media (max-width: 820px) {
       align-items: center;
     }
-    
-    P{
-      @media (max-width: 820px){
+
+    P {
+      @media (max-width: 820px) {
         min-width: 69px;
       }
     }
@@ -795,20 +797,20 @@ footer {
     flex-direction: column;
   }
 
-  .mail-adress{
-    @media (max-width: 820px){
+  .mail-adress {
+    @media (max-width: 820px) {
       width: 51%;
     }
 
-    @media (max-width: 680px){
+    @media (max-width: 680px) {
       width: 65%;
     }
 
-    @media (max-width: 540px){
+    @media (max-width: 540px) {
       width: 85%;
     }
 
-    @media (max-width: 460px){
+    @media (max-width: 460px) {
       width: 95%;
     }
   }
@@ -826,19 +828,19 @@ footer {
     display: flex;
     flex-direction: row;
 
-    @media (max-width: 820px){
+    @media (max-width: 820px) {
       width: 51%;
     }
 
-    @media (max-width: 680px){
+    @media (max-width: 680px) {
       width: 65%;
     }
 
-    @media (max-width: 540px){
+    @media (max-width: 540px) {
       width: 85%;
     }
 
-    @media (max-width: 460px){
+    @media (max-width: 460px) {
       width: 95%;
     }
 
@@ -846,7 +848,7 @@ footer {
       min-width: 180px;
       margin-right: 107px;
 
-      @media (max-width: 820px){
+      @media (max-width: 820px) {
         margin-right: 0;
       }
     }
@@ -867,21 +869,21 @@ footer {
   }
 
   .social-nw {
-    @media (max-width: 820px){
-      display: flex; 
+    @media (max-width: 820px) {
+      display: flex;
       align-items: center;
       width: 51%;
     }
 
-    @media (max-width: 680px){
+    @media (max-width: 680px) {
       width: 65%;
     }
 
-    @media (max-width: 540px){
+    @media (max-width: 540px) {
       width: 85%;
     }
 
-    @media (max-width: 460px){
+    @media (max-width: 460px) {
       width: 95%;
     }
   }
@@ -890,7 +892,7 @@ footer {
     display: flex;
     align-items: center;
 
-    @media (max-width: 820px){
+    @media (max-width: 820px) {
       min-width: 199px;
     }
     a img {
